@@ -1,4 +1,4 @@
-import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
+import {Platform, SafeAreaView, StatusBar, useColorScheme} from 'react-native';
 import NavigationComponent from '@/components/Navigation';
 import React from 'react';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
@@ -12,7 +12,9 @@ const App = props => {
   };
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      {Platform.OS === 'ios' ? (
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      ) : null}
       <NavigationComponent
         initPath={props.initPath}
         initParams={props.initParams}

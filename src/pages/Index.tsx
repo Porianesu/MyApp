@@ -63,7 +63,7 @@ const Index = () => {
       contentInsetAdjustmentBehavior="automatic"
       style={backgroundStyle}>
       <Header />
-      <Button title={'goLogin'} onPress={goLogin} />
+      <Button title={'Go_Login'} onPress={goLogin} />
       <View
         style={{
           backgroundColor: isDarkMode ? Colors.black : Colors.white,
